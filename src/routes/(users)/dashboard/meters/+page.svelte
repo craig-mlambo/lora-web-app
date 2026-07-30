@@ -36,11 +36,11 @@
 	</div>
 {/if}
 
-<div class="mt-6 flex flex-wrap gap-3">
+<div class="mt-6 grid gap-3 sm:flex sm:flex-wrap">
 	<select
 		bind:value={householdFilter}
 		aria-label="Filter by household"
-		class="rounded-xl border-ink-200 bg-white px-3 py-2 text-sm"
+		class="w-full rounded-xl border-ink-200 bg-white px-3 py-2 text-sm sm:w-auto"
 	>
 		<option value="all">All households</option>
 		{#each data.households as household (household.id)}<option value={household.id}
@@ -50,7 +50,7 @@
 	<select
 		bind:value={statusFilter}
 		aria-label="Filter by status"
-		class="rounded-xl border-ink-200 bg-white px-3 py-2 text-sm"
+		class="w-full rounded-xl border-ink-200 bg-white px-3 py-2 text-sm sm:w-auto"
 	>
 		<option value="all">All statuses</option>
 		<option value="active">Active</option><option value="pending">Pending</option><option

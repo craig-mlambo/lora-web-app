@@ -84,7 +84,7 @@
 	<title>Sign in · LYE Aqua Flow</title>
 </svelte:head>
 
-<div class="grid min-h-screen lg:grid-cols-2">
+<div class="grid min-h-screen min-h-dvh lg:grid-cols-2">
 	<!-- Brand panel -->
 	<section
 		class="relative hidden overflow-hidden bg-gradient-to-br from-brand-700 via-brand-800 to-ink-900 p-12 lg:flex lg:flex-col"
@@ -143,7 +143,7 @@
 	</section>
 
 	<!-- Form panel -->
-	<section class="flex items-center justify-center p-6 sm:p-12">
+	<section class="flex items-center justify-center px-4 py-6 sm:p-12">
 		<div class="w-full max-w-sm">
 			<div class="lg:hidden">
 				<Logo />

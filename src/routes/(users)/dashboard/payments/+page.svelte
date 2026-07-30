@@ -30,7 +30,9 @@
 </script>
 
 <svelte:head><title>Payments and credit · LYE Aqua Flow</title></svelte:head>
-<div class="flex flex-wrap items-end justify-between gap-4">
+<div
+	class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between"
+>
 	<div>
 		<h1 class="text-2xl font-semibold tracking-tight text-ink-900">Payments & water credit</h1>
 		<p class="mt-1 text-sm text-ink-500">Request top-ups and follow your prepaid water history.</p>

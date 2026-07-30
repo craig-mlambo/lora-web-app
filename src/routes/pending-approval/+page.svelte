@@ -27,11 +27,11 @@
 	<title>Account status · LYE Aqua Flow</title>
 </svelte:head>
 
-<main class="grid min-h-screen place-items-center bg-ink-50 p-6">
+<main class="grid min-h-screen min-h-dvh place-items-center bg-ink-50 px-4 py-6 sm:p-6">
 	<div class="w-full max-w-md">
 		<div class="flex justify-center"><Logo /></div>
 		<section
-			class="mt-8 rounded-2xl border border-ink-200 bg-white p-7 text-center shadow-[var(--shadow-card)]"
+			class="mt-8 rounded-2xl border border-ink-200 bg-white p-5 text-center shadow-[var(--shadow-card)] sm:p-7"
 		>
 			<div
 				class="mx-auto grid h-14 w-14 place-items-center rounded-full {isPending

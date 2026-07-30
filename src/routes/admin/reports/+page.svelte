@@ -71,7 +71,9 @@
 	/>
 </svelte:head>
 
-<div class="flex flex-wrap items-end justify-between gap-4">
+<div
+	class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between"
+>
 	<div>
 		<h1 class="text-2xl font-semibold tracking-tight text-ink-900">Water usage reports</h1>
 		<p class="mt-1 text-sm text-ink-500">

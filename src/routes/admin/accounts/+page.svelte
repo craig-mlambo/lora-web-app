@@ -20,7 +20,9 @@
 
 <svelte:head><title>Prepaid accounts · Admin · LYE Aqua Flow</title></svelte:head>
 
-<div class="flex flex-wrap items-end justify-between gap-4">
+<div
+	class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between"
+>
 	<div>
 		<h1 class="text-2xl font-semibold tracking-tight text-ink-900">Prepaid accounts</h1>
 		<p class="mt-1 text-sm text-ink-500">
@@ -52,62 +54,66 @@
 <div
 	class="mt-6 overflow-hidden rounded-2xl border border-ink-200/70 bg-white shadow-[var(--shadow-card)]"
 >
-	<table class="w-full min-w-[700px] text-left text-sm">
-		<thead class="border-b border-ink-100 bg-ink-50 text-xs uppercase tracking-wide text-ink-400">
-			<tr>
-				<th class="px-6 py-3 font-medium">Household</th>
-				<th class="px-6 py-3 font-medium">Currency</th>
-				<th class="px-6 py-3 font-medium">Low-balance threshold</th>
-				<th class="px-6 py-3 font-medium">Opened</th>
-				<th class="px-6 py-3 font-medium">Status</th>
-				<th class="px-6 py-3 text-right font-medium">Actions</th>
-			</tr>
-		</thead>
-		<tbody class="divide-y divide-ink-100">
-			{#each data.accounts as account (account.id)}
+	<div class="scroll-thin overflow-x-auto overscroll-x-contain">
+		<table class="w-full min-w-[700px] text-left text-sm">
+			<thead class="border-b border-ink-100 bg-ink-50 text-xs uppercase tracking-wide text-ink-400">
 				<tr>
-					<td class="px-6 py-3">
-						<p class="font-medium text-ink-900">{account.household?.name || 'Missing household'}</p>
-						<p class="font-mono text-xs text-ink-400">
-							{account.household?.account_number || account.household_id}
-						</p>
-					</td>
-					<td class="px-6 py-3 font-semibold text-ink-700">{account.currency}</td>
-					<td class="px-6 py-3 text-ink-600">{account.low_balance_threshold_litres} L</td>
-					<td class="px-6 py-3 text-ink-500">{shortTime(account.opened_at)}</td>
-					<td class="px-6 py-3">
-						<span
-							class="rounded-full px-2.5 py-1 text-xs font-medium capitalize ring-1 ring-inset {statusStyles[
-								account.status
-							] ?? statusStyles.closed}"
-						>
-							{account.status}
-						</span>
-					</td>
-					<td class="px-6 py-3 text-right">
-						<button
-							type="button"
-							onclick={() => {
-								editing = account;
-								editOpen = true;
-							}}
-							class="grid h-8 w-8 place-items-center rounded-lg text-ink-400 hover:bg-ink-100 hover:text-ink-700"
-							aria-label="Edit prepaid account"
-						>
-							<Icon name="edit" size={16} />
-						</button>
-					</td>
+					<th class="px-6 py-3 font-medium">Household</th>
+					<th class="px-6 py-3 font-medium">Currency</th>
+					<th class="px-6 py-3 font-medium">Low-balance threshold</th>
+					<th class="px-6 py-3 font-medium">Opened</th>
+					<th class="px-6 py-3 font-medium">Status</th>
+					<th class="px-6 py-3 text-right font-medium">Actions</th>
 				</tr>
-			{/each}
-			{#if data.accounts.length === 0}
-				<tr>
-					<td colspan="6" class="px-6 py-10 text-center text-ink-400">
-						No prepaid accounts found.
-					</td>
-				</tr>
-			{/if}
-		</tbody>
-	</table>
+			</thead>
+			<tbody class="divide-y divide-ink-100">
+				{#each data.accounts as account (account.id)}
+					<tr>
+						<td class="px-6 py-3">
+							<p class="font-medium text-ink-900">
+								{account.household?.name || 'Missing household'}
+							</p>
+							<p class="font-mono text-xs text-ink-400">
+								{account.household?.account_number || account.household_id}
+							</p>
+						</td>
+						<td class="px-6 py-3 font-semibold text-ink-700">{account.currency}</td>
+						<td class="px-6 py-3 text-ink-600">{account.low_balance_threshold_litres} L</td>
+						<td class="px-6 py-3 text-ink-500">{shortTime(account.opened_at)}</td>
+						<td class="px-6 py-3">
+							<span
+								class="rounded-full px-2.5 py-1 text-xs font-medium capitalize ring-1 ring-inset {statusStyles[
+									account.status
+								] ?? statusStyles.closed}"
+							>
+								{account.status}
+							</span>
+						</td>
+						<td class="px-6 py-3 text-right">
+							<button
+								type="button"
+								onclick={() => {
+									editing = account;
+									editOpen = true;
+								}}
+								class="grid h-8 w-8 place-items-center rounded-lg text-ink-400 hover:bg-ink-100 hover:text-ink-700"
+								aria-label="Edit prepaid account"
+							>
+								<Icon name="edit" size={16} />
+							</button>
+						</td>
+					</tr>
+				{/each}
+				{#if data.accounts.length === 0}
+					<tr>
+						<td colspan="6" class="px-6 py-10 text-center text-ink-400">
+							No prepaid accounts found.
+						</td>
+					</tr>
+				{/if}
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <Modal bind:open={createOpen} title="New prepaid account">

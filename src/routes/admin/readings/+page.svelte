@@ -33,10 +33,10 @@
 	</div>
 {/if}
 
-<div class="mt-6 flex flex-wrap items-center gap-3">
+<div class="mt-6 grid gap-3 sm:flex sm:flex-wrap sm:items-center">
 	<select
 		bind:value={deviceFilter}
-		class="rounded-xl border-ink-200 bg-white py-2 pl-3 pr-8 text-sm focus:border-brand-400 focus:ring-brand-400"
+		class="w-full rounded-xl border-ink-200 bg-white py-2 pl-3 pr-8 text-sm focus:border-brand-400 focus:ring-brand-400 sm:w-auto"
 	>
 		<option value="all">All devices</option>
 		{#each data.devices as device (device.id)}
@@ -45,7 +45,7 @@
 			>
 		{/each}
 	</select>
-	<div class="inline-flex rounded-xl bg-ink-100 p-1 text-sm font-medium">
+	<div class="grid grid-cols-3 rounded-xl bg-ink-100 p-1 text-sm font-medium sm:inline-flex">
 		{#each [{ v: 'all', l: 'All' }, { v: 'ok', l: 'Checksum OK' }, { v: 'fail', l: 'Failed' }] as filter (filter.v)}
 			<button
 				type="button"

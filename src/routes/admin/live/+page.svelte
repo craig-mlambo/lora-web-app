@@ -140,14 +140,16 @@
 
 <svelte:head><title>Live data · Admin · LYE Aqua Flow</title></svelte:head>
 
-<div class="flex flex-wrap items-end justify-between gap-4">
+<div
+	class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between"
+>
 	<div>
 		<h1 class="text-2xl font-semibold tracking-tight text-ink-900">Live data</h1>
 		<p class="mt-1 text-sm text-ink-500">
 			Decoded CJ/T 188 uplinks straight from the LYE ingestion API.
 		</p>
 	</div>
-	<div class="flex items-center gap-2">
+	<div class="flex w-full flex-wrap items-center gap-2 sm:w-auto">
 		<label
 			class="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-ink-200 bg-white px-3 py-2 text-sm font-medium text-ink-700"
 		>
@@ -189,7 +191,7 @@
 			</select>
 		</div>
 
-		<label class="relative min-w-[220px] flex-1">
+		<label class="relative w-full min-w-0 sm:min-w-[220px] sm:flex-1">
 			<span
 				class="pointer-events-none absolute inset-y-0 left-3 grid place-items-center text-ink-400"
 			>

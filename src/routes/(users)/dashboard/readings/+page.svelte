@@ -18,33 +18,33 @@
 	</div>{/if}
 <form
 	method="GET"
-	class="mt-6 flex flex-wrap items-end gap-3 rounded-2xl border border-ink-200 bg-white p-4"
+	class="mt-6 grid gap-3 rounded-2xl border border-ink-200 bg-white p-4 sm:flex sm:flex-wrap sm:items-end"
 >
-	<label class="text-sm font-medium text-ink-700"
+	<label class="w-full text-sm font-medium text-ink-700 sm:w-auto"
 		>Household
 		<select
 			name="household"
 			value={data.filters.householdId}
-			class="mt-1 block rounded-xl border-ink-200 px-3 py-2 text-sm"
+			class="mt-1 block w-full rounded-xl border-ink-200 px-3 py-2 text-sm sm:w-auto"
 			><option value="all">All households</option
 			>{#each data.households as household (household.id)}<option value={household.id}
 					>{household.name}</option
 				>{/each}</select
 		>
 	</label>
-	<label class="text-sm font-medium text-ink-700"
+	<label class="w-full text-sm font-medium text-ink-700 sm:w-auto"
 		>Meter
 		<select
 			name="device"
 			value={data.filters.deviceId}
-			class="mt-1 block rounded-xl border-ink-200 px-3 py-2 text-sm"
+			class="mt-1 block w-full rounded-xl border-ink-200 px-3 py-2 text-sm sm:w-auto"
 			><option value="all">All meters</option>{#each data.devices as device (device.id)}<option
 					value={device.id}>{device.serial_number} · {device.household?.name}</option
 				>{/each}</select
 		>
 	</label>
 	<button
-		class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white"
+		class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white sm:w-auto"
 		><Icon name="filter" size={16} /> Apply</button
 	>
 </form>

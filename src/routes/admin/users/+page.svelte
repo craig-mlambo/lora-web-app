@@ -80,7 +80,9 @@
 
 <svelte:head><title>Users · Admin · LYE Aqua Flow</title></svelte:head>
 
-<div class="flex flex-wrap items-end justify-between gap-4">
+<div
+	class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between"
+>
 	<div>
 		<h1 class="text-2xl font-semibold tracking-tight text-ink-900">Users</h1>
 		<p class="mt-1 text-sm text-ink-500">
@@ -130,7 +132,7 @@
 {/if}
 
 <div class="mt-6 flex flex-wrap items-center gap-3">
-	<label class="relative min-w-[220px] flex-1">
+	<label class="relative w-full min-w-0 sm:min-w-[220px] sm:flex-1">
 		<span
 			class="pointer-events-none absolute inset-y-0 left-3 grid place-items-center text-ink-400"
 		>
@@ -146,7 +148,7 @@
 	<select
 		bind:value={statusFilter}
 		aria-label="Filter by account status"
-		class="rounded-xl border-ink-200 bg-white py-2 pl-3 pr-9 text-sm text-ink-700 focus:border-brand-400 focus:ring-brand-400"
+		class="w-full rounded-xl border-ink-200 bg-white py-2 pl-3 pr-9 text-sm text-ink-700 focus:border-brand-400 focus:ring-brand-400 sm:w-auto"
 	>
 		<option value="all">All statuses</option>
 		<option value="invited">Pending approval</option>

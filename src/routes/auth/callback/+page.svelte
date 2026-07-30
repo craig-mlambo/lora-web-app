@@ -53,7 +53,7 @@
 	<title>Completing sign in · LYE Aqua Flow</title>
 </svelte:head>
 
-<main class="grid min-h-screen place-items-center bg-ink-50 p-6">
+<main class="grid min-h-screen min-h-dvh place-items-center bg-ink-50 px-4 py-6 sm:p-6">
 	<div
 		class="w-full max-w-sm rounded-2xl border border-ink-200 bg-white p-6 text-center shadow-[var(--shadow-card)]"
 	>

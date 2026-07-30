@@ -141,7 +141,7 @@
 	</div>
 {/snippet}
 
-<div class="min-h-screen bg-ink-50">
+<div class="min-h-screen min-h-dvh bg-ink-50">
 	{#if navigating.to}
 		<div
 			class="fixed inset-x-0 top-0 z-50 h-0.5 overflow-hidden bg-brand-100"
@@ -164,13 +164,15 @@
 				aria-label="Close menu"
 				onclick={() => (mobileOpen = false)}
 			></button>
-			<div class="absolute inset-y-0 left-0 w-64 bg-white shadow-xl">
+			<div
+				class="scroll-thin absolute inset-y-0 left-0 w-72 max-w-[calc(100vw-3rem)] overflow-y-auto bg-white shadow-xl"
+			>
 				{@render sidebar()}
 			</div>
 		</div>
 	{/if}
 
-	<div class="lg:pl-64">
+	<div class="min-w-0 lg:pl-64">
 		<!-- Topbar -->
 		<header
 			class="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-ink-200 bg-white/80 px-4 backdrop-blur-md sm:px-6"
@@ -213,7 +215,9 @@
 			</div>
 		</header>
 
-		<main class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+		<main
+			class="mx-auto min-w-0 max-w-7xl px-3 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-6 sm:py-6 lg:px-8"
+		>
 			{@render children()}
 		</main>
 	</div>

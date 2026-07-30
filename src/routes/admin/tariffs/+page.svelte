@@ -30,7 +30,9 @@
 
 <svelte:head><title>Tariffs · Admin · LYE Aqua Flow</title></svelte:head>
 
-<div class="flex flex-wrap items-end justify-between gap-4">
+<div
+	class="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between"
+>
 	<div>
 		<h1 class="text-2xl font-semibold tracking-tight text-ink-900">Tariffs</h1>
 		<p class="mt-1 text-sm text-ink-500">Manage effective pricing and volume bands.</p>
@@ -92,8 +94,10 @@
 				</button>
 			</div>
 
-			<div class="mt-4 overflow-hidden rounded-xl border border-ink-100">
-				<table class="w-full text-left text-xs">
+			<div
+				class="scroll-thin mt-4 overflow-x-auto overscroll-x-contain rounded-xl border border-ink-100"
+			>
+				<table class="w-full min-w-[440px] text-left text-xs">
 					<thead class="bg-ink-50 text-ink-400">
 						<tr>
 							<th class="px-3 py-2 font-medium">Band</th>
